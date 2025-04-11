@@ -1,0 +1,868 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  I360 Styles Starter
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* natural box model */
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: rgba(214, 204, 230, 0.219);
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin-left: 250px;
+  /* Content is shifted */
+  transition: margin-left 0.5s;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* PAGE THEME COLORS */
+:root {
+  --dark-purple: #733068;
+  --dark-red: #A6415C;
+  --dark-blue: #364573;
+  --pink: #F2A0BE;
+  --med-purple: #A36C93;
+  --light-purple: #C1AADA;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  UTILITIES
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* no break - example; optional to keep */
+.nobr {
+  white-space: nowrap;
+}
+
+p {
+  font-weight: 500;
+  color: var(--dark-purple);
+  line-height: 1.5em;
+  font-family: 'Spectral', sans-serif;
+  font-size: 14pt;
+}
+
+h2 {
+  font-size: 20pt;
+}
+
+.button {
+  border-radius: 15px;
+  /* width: 175px; */
+  /* height: 50px; */
+  background-color: var(--med-purple);
+  color: white;
+  padding: 15px;
+  display: inline-block;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  Navigation Styles
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.openbtn {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  color: var(--dark-blue);
+  padding-bottom: 1em;
+}
+
+.openbtn:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.menu-button {
+  font-size: 60px !important;
+  position: relative;
+  top: 6px;
+  left: -4px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* The side navigation menu */
+.all-over-bkg {
+  display: none;
+  pointer-events: none;
+}
+
+.is-visible {
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 9999;
+  display: block;
+}
+
+#mySidenav {
+  z-index: 10000;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  background-color: var(--light-purple);
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 0px 0px 22px 32px;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+  font-family: 'Spectral', sans-serif;
+  font-weight: 700;
+  color: black;
+  font-size: 28pt;
+  line-height: 2em;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: var(--dark-blue);
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  LINKS
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #364573;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  HOME
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.about-me h1 {
+  margin-top: -100px;
+  font-family: 'Spectral', sans-serif;
+  padding-left: 550px;
+  color: var(--dark-blue);
+  font-weight: 800;
+}
+
+.about-me p,
+.feature {
+  text-align: justify;
+  padding: 20px;
+  margin: 0 100px;
+}
+
+.about-me img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+  margin: 50px 20px 50px 120px;
+  border-radius: 25px;
+  /* border: black 2px solid; */
+}
+
+.about-me .name {
+  font-size: 100px;
+  position: relative;
+  top: 350px;
+}
+
+.about-me .subline {
+  position: relative;
+  top: 420px;
+  left: 40px;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  Featured Projects
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.feature h1,
+h2 {
+  color: var(--dark-blue);
+}
+
+.feature h1 {
+  margin-left: -3px;
+}
+
+.robo-dog,
+.party-scene,
+.northern-legends {
+  display: flex;
+  flex-direction: row;
+}
+
+.description {
+  width: 70%;
+  padding-left: 50px;
+  margin-top: -30px;
+}
+
+.party-scene iframe {
+  width: 600px;
+}
+
+/* Carousel Container */
+.carousel-container {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  /* margin: 0 auto; */
+}
+
+.carousel-slide {
+  width: 100%;
+  max-width: 100%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}
+
+/* Carousel Items (Horizontal Stack) */
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  scroll-snap-type: x mandatory;
+  /* Enables snapping */
+  scroll-behavior: smooth;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+/* Ensure Images and Videos Fit Properly */
+.carousel img,
+.carousel video {
+  width: 100%;
+  height: 400px;
+  flex-shrink: 0;
+  object-fit: contain;
+  background-color: white;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  /* Snaps each image */
+}
+
+/* Carousel Buttons (Arrows) */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--med-purple);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+/* Position Left & Right Arrows */
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Button Hover Effect */
+.carousel-btn:hover {
+  background-color: var(--light-purple);
+}
+
+.pitchdeck-button a {
+  color: white;
+  font-size: 14pt;
+}
+
+.pitchdeck-button {
+  margin-top: 50px;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  SCROLLING ARROW
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Scroll to Top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  /* Distance from bottom */
+  right: 20px;
+  /* Distance from right */
+  width: 50px;
+  height: 50px;
+  background-color: var(--med-purple);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 30px;
+  display: none;
+  /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover Effect */
+.scroll-top:hover {
+  background-color: var(--dark-purple);
+  transform: scale(1.1);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  RESUME STYLES
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.resume {
+  font-family: 'Spectral', sans-serif;
+  width: 1350px;
+  /* border: black 2px solid; */
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.resume p,
+h4,
+h1 {
+  margin: 0.5em;
+  color: black;
+}
+
+.resume-head h1 {
+  color: var(--dark-blue);
+  font-weight: 800;
+}
+
+.resume-head {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.resume-body {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.resume h3 {
+  border-bottom: solid var(--med-purple);
+  color: var(--dark-blue);
+  font-weight: 800;
+  padding-bottom: 5px;
+}
+
+.work li {
+  list-style-position: inside;
+  list-style-type: disc;
+  line-height: 1.5em;
+  text-indent: -1.5em;
+  margin-left: 2em;
+}
+
+.resume .button {
+  border-radius: 15px;
+  background-color: var(--med-purple);
+  color: white;
+  padding: 15px 25px;
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-block;
+  text-align: center;
+  margin: 30px auto;
+  display: block;
+  width: fit-content;
+}
+
+.resume-body h4 span {
+  float: right;
+  font-weight: normal;
+}
+
+.resume-body p {
+  font-size: 12pt;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  ARCHIVE STYLES
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.portfolio-intro {
+  text-align: justify;
+  padding: 20px;
+  margin: 0 100px;
+  font-family: 'Spectral', sans-serif;
+  line-height: 1.5em;
+  color: var(--dark-purple);
+  font-weight: 500;
+}
+
+.portfolio-intro h1 {
+  font-size: 48px;
+  font-family: 'Spectral', sans-serif;
+  color: var(--dark-blue);
+  font-weight: 800;
+  margin-left: -3px;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  border-bottom: solid var(--med-purple) 4px;
+}
+
+/* drop down styles */
+summary {
+  font-size: 22pt;
+  line-height: 3.4em;
+  color: var(--dark-blue);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+details {
+  display: block;
+  /* Should be block (default) */
+}
+
+/* content */
+.archive-content {
+  /* border: black 2px solid; */
+  margin: 10px 100px;
+}
+
+.graphic-design-cat {
+  margin-left: 50px;
+}
+
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  justify-content: center;
+  padding: 0px;
+}
+
+.poster-grid img {
+  width: 100%;
+  /* Makes sure the image fits in its grid cell */
+  /* max-width: 400px; */
+  /* Adjust this for size */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 10px;
+  /* Optional for rounded corners */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  /* Soft shadow for depth */
+  transition: transform 0.3s ease-in-out;
+}
+
+.poster-grid img:hover,
+.photography img:hover,
+.verticals img:hover {
+  transform: scale(1.5);
+  /* Slight zoom effect on hover */
+  cursor: pointer;
+}
+
+.ez-park {
+  display: flex;
+  gap: 35px;
+}
+
+.ez-park img {
+  width: 300px;
+}
+
+.ez-park video {
+  height: 280px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.eskenazi-book,
+.type-book,
+.dino-book,
+.ethics-book,
+.robo-dog,
+.sims-light,
+.graphics {
+  display: flex;
+}
+
+.booklets,
+.branding {
+  padding-bottom: 50px;
+}
+
+.photography,
+.verticals {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* 3 evenly spaced columns */
+  gap: 10px;
+  /* This will now work */
+  justify-content: center;
+  /* Centers the whole grid */
+  padding: 20px;
+}
+
+.verticals {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.photography img {
+  width: 100%;
+  height: auto;
+  /* Maintain aspect ratio */
+  object-fit: contain;
+  border-radius: 5px;
+  /* Optional: Rounds corners */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  /* Soft shadow for depth */
+  transition: transform 0.3s ease-in-out;
+}
+
+.verticals img {
+  width: 400px;
+  height: auto;
+  /* Maintain aspect ratio */
+  object-fit: contain;
+  border-radius: 10px;
+  /* Optional: Rounds corners */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  /* Soft shadow for depth */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Modal (hidden by default) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Black with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+/* Adjust for sidebar being open */
+body.sidebar-open .modal {
+  left: 250px;
+  /* Push modal right by the width of the sidebar */
+  width: calc(100% - 250px);
+  /* Reduce modal width to fill remaining space */
+}
+
+/* Modal content (the image) */
+.modal-content {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Close button (X) */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  FOOTER  
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+footer {
+  background-color: #BDA9D9;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  padding: 15px 0;
+  margin-top: auto;
+}
+
+.footer-text p {
+  text-align: center;
+  font-family: "Spectral", sans-serif;
+  font-weight: 700;
+  color: black;
+  line-height: 1.25em;
+}
+
+footer svg {
+  color: #364573;
+}
+
+.logo {
+  height: 100px;
+  width: 95px;
+  padding: 28px 15px 0 0;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  MEDIA QUERIES
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+@media screen and (min-width: 1025px) {
+  body {
+    margin-left: 250px;
+  }
+
+  #mySidenav {
+    width: 250px;
+  }
+
+  .all-over-bkg {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    margin-left: 0;
+  }
+
+  #mySidenav {
+    width: 0;
+  }
+
+  .resume {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .resume-body {
+    width: 90%;
+  }
+
+  .resume .button {
+    left: 0;
+    top: 20px;
+    visibility: visible;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .about-me {
+    text-align: center;
+  }
+
+  .about-me h1,
+  .about-me .name,
+  .about-me .subline {
+    padding: 0;
+    margin: 10px auto;
+    position: static;
+    font-size: 40px;
+  }
+
+  .about-me img {
+    width: 70%;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .feature,
+  .portfolio-intro,
+  .archive-content {
+    margin: 0 40px;
+  }
+
+  .robo-dog,
+  .party-scene,
+  .northern-legends,
+  .eskenazi-book,
+  .type-book,
+  .dino-book,
+  .ethics-book,
+  .sims-light,
+  .graphics,
+  .ez-park {
+    flex-direction: column;
+  }
+
+  .carousel-container,
+  .party-scene iframe,
+  .ez-park video {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .description {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .poster-grid,
+  .photography,
+  .verticals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-button {
+    font-size: 50px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .poster-grid,
+  .photography,
+  .verticals {
+    grid-template-columns: 1fr;
+  }
+
+  .openbtn {
+    top: 5px;
+    left: 10px;
+  }
+
+  .menu-button {
+    font-size: 40px !important;
+  }
+
+  .scroll-top {
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+  }
+
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
+  #mySidenav {
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    left: -250px;
+    top: 0;
+    z-index: 9999;
+    transition: left 0.3s ease;
+  }
+
+  body.sidebar-open #mySidenav {
+    left: 0;
+  }
+
+  .all-over-bkg {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9998;
+    display: none;
+  }
+
+  .all-over-bkg.is-visible {
+    display: block;
+  }
+
+  body.sidebar-open {
+    margin-left: 0 !important;
+  }
+}
