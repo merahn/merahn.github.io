@@ -601,7 +601,7 @@ details {
 }
 
 .verticals img {
-  width: 400px;
+  width: 100%;
   height: auto;
   /* Maintain aspect ratio */
   object-fit: contain;
@@ -780,6 +780,7 @@ footer svg {
   .ez-park {
     flex-direction: column;
   }
+  
 
   .carousel-container,
   .party-scene iframe,
@@ -801,6 +802,12 @@ footer svg {
 
   .menu-button {
     font-size: 50px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-me p {
+    margin: 0 20px;
   }
 }
 
