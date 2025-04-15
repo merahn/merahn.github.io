@@ -1,37 +1,38 @@
-// for nav 
-function openNav() {
-  document.querySelector('#mySidenav').style.width = "250px";
+// Immediately set sidebar state before anything renders
+if (window.innerWidth > 1430) {
   document.body.style.marginLeft = "250px";
-  document.querySelector('.all-over-bkg').classList.add('is-visible');
-
-  // Add class to body to adjust modal positioning when the sidebar is open
-  document.body.classList.add('sidebar-open');
-}
-
-function closeNav() {
-  document.querySelector('#mySidenav').style.width = "0";
+  document.body.classList.add("sidebar-open");
+  document.querySelector('#mySidenav').style.width = "250px";
+} else {
   document.body.style.marginLeft = "0";
-  document.querySelector('.all-over-bkg').classList.remove('is-visible');
-
-  // Remove class when sidebar is closed
-  document.body.classList.remove('sidebar-open');
+  document.querySelector('#mySidenav').style.width = "0";
+  document.body.classList.remove("sidebar-open");
 }
 
+// DOM Ready
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.innerWidth > 1100) {
-    openNav(); // Open sidebar by default on desktop/tablet
-  } else {
-    closeNav(); // Ensure it's closed on smaller screens
+  // Show content after layout is settled
+  document.body.style.visibility = "visible";
+
+  // NAV CONTROLS
+  function openNav() {
+    document.querySelector('#mySidenav').style.width = "250px";
+    document.body.style.marginLeft = "250px";
+    document.querySelector('.all-over-bkg').classList.add('is-visible');
+    document.body.classList.add('sidebar-open');
   }
-});
 
+  function closeNav() {
+    document.querySelector('#mySidenav').style.width = "0";
+    document.body.style.marginLeft = "0";
+    document.querySelector('.all-over-bkg').classList.remove('is-visible');
+    document.body.classList.remove('sidebar-open');
+  }
 
-document.querySelector('.openbtn').addEventListener('click', openNav);
-document.querySelector('.closebtn').addEventListener('click', closeNav);
+  document.querySelector('.openbtn').addEventListener('click', openNav);
+  document.querySelector('.closebtn').addEventListener('click', closeNav);
 
-
-// for carousel
-document.addEventListener("DOMContentLoaded", function () {
+  // CAROUSEL
   document.querySelectorAll(".carousel-container").forEach(container => {
     const carousel = container.querySelector(".carousel");
     const items = carousel.querySelectorAll(".carousel-slide");
@@ -67,42 +68,27 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Resize listener
     window.addEventListener("resize", setSlideWidths);
     setSlideWidths();
   });
-});
 
-
-
-
-// scrolling arrow
-document.addEventListener("DOMContentLoaded", function () {
+  // SCROLL TO TOP BUTTON
   const scrollToTopBtn = document.getElementById("scrollToTop");
-
-  // Show button when scrolling down
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 300) { // Show when scrolled 300px
-      scrollToTopBtn.style.display = "flex";
-    } else {
-      scrollToTopBtn.style.display = "none";
-    }
+    scrollToTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
   });
 
-  // Scroll back to top smoothly when clicked
   scrollToTopBtn.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-});
 
-// for the modal
-document.addEventListener("DOMContentLoaded", function () {
-  var modal = document.getElementById("imageModal");
-  var modalImage = document.getElementById("modalImage");
-  var closeButton = document.getElementsByClassName("close")[0];
+  // MODAL IMAGE VIEWER
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const closeButton = document.getElementsByClassName("close")[0];
 
   function attachClickEvents() {
-    var images = document.querySelectorAll(".clickable-image img"); // make sure we're targeting the <img> not the div
+    const images = document.querySelectorAll(".clickable-image img");
     images.forEach(img => {
       img.onclick = function () {
         modal.style.display = "flex";
@@ -112,10 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Attach events initially
   attachClickEvents();
 
-  // Also attach on toggle of <details> to catch newly shown content
   document.querySelectorAll("details").forEach(detail => {
     detail.addEventListener("toggle", attachClickEvents);
   });

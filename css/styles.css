@@ -10,6 +10,11 @@ html {
   margin: 0;
 }
 
+/* Hide content until layout is decided */
+body {
+  visibility: hidden;
+}
+
 body {
   margin-left: 250px;
   /* Content is shifted */
@@ -18,6 +23,14 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+
+body.nav-closed #mySidenav {
+  width: 0;
+  overflow: hidden;
+}
+body.nav-closed {
+  margin-left: 0 !important;
 }
 
 *,
@@ -702,7 +715,7 @@ footer svg {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
   MEDIA QUERIES
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-@media screen and (min-width: 1025px) {
+/* @media screen and (min-width: 1025px) {
   body {
     margin-left: 250px;
   }
@@ -714,9 +727,9 @@ footer svg {
   .all-over-bkg {
     display: none !important;
   }
-}
+} */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1100px) {
   body {
     margin-left: 0;
   }
@@ -778,9 +791,9 @@ footer svg {
   .sims-light,
   .graphics,
   .ez-park {
-    flex-direction: column;
+    flex-direction: column !important
   }
-  
+
 
   .carousel-container,
   .party-scene iframe,
@@ -809,7 +822,15 @@ footer svg {
   .about-me p {
     margin: 0 20px;
   }
+
+  .portfolio-intro h1 {
+    font-size: 32px;
+    padding-bottom: 20px;
+    margin-left: 0;
+    text-align: center;
+  }
 }
+
 
 @media screen and (max-width: 600px) {
 
