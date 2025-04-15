@@ -29,6 +29,7 @@ body.nav-closed #mySidenav {
   width: 0;
   overflow: hidden;
 }
+
 body.nav-closed {
   margin-left: 0 !important;
 }
@@ -281,6 +282,7 @@ h2 {
   width: 70%;
   padding-left: 50px;
   margin-top: -30px;
+  text-align: justify;
 }
 
 .party-scene iframe {
@@ -558,16 +560,24 @@ details {
 .ez-park {
   display: flex;
   gap: 35px;
+  align-items: flex-start;
 }
 
 .ez-park img {
   width: 300px;
+  height: auto;
+  object-fit: contain;
 }
 
 .ez-park video {
-  height: 280px;
+  width: 350px;
+  /* adjust width to make it less wide */
+  height: auto;
+  /* keep aspect ratio */
   margin-top: 10px;
   border-radius: 20px;
+  object-fit: contain;
+  /* make sure it doesn’t stretch */
 }
 
 .eskenazi-book,
@@ -627,38 +637,29 @@ details {
 
 /* Modal (hidden by default) */
 .modal {
-  display: none;
   position: fixed;
   z-index: 9999;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  /* Black with opacity */
-  display: flex;
   justify-content: center;
   align-items: center;
-  transition: left 0.3s ease, width 0.3s ease;
+  padding: 0; /* added just in case */
+  margin: 0 !important;
 }
 
-/* Adjust for sidebar being open */
-body.sidebar-open .modal {
-  left: 250px;
-  /* Push modal right by the width of the sidebar */
-  width: calc(100% - 250px);
-  /* Reduce modal width to fill remaining space */
-}
-
-/* Modal content (the image) */
 .modal-content {
   display: block;
-  margin: 0 auto;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 80vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  margin: auto;
   object-fit: contain;
+}
+
+body:not(.sidebar-open) .modal {
+  padding-left: 250px; /* cancel out the leftover body margin */
 }
 
 /* Close button (X) */
