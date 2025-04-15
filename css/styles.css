@@ -286,8 +286,11 @@ h2 {
 }
 
 .party-scene iframe {
-  width: 600px;
+  max-width: 600px;
+  
+  
 }
+
 
 /* Carousel Container */
 .carousel-container {
@@ -559,7 +562,6 @@ details {
 
 .ez-park {
   display: flex;
-  gap: 35px;
   align-items: flex-start;
 }
 
@@ -569,16 +571,6 @@ details {
   object-fit: contain;
 }
 
-.ez-park video {
-  width: 350px;
-  /* adjust width to make it less wide */
-  height: auto;
-  /* keep aspect ratio */
-  margin-top: 10px;
-  border-radius: 20px;
-  object-fit: contain;
-  /* make sure it doesn’t stretch */
-}
 
 .eskenazi-book,
 .type-book,

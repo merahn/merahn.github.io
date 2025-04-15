@@ -1,5 +1,5 @@
 // Immediately set sidebar state before anything renders
-if (window.innerWidth > 1430) {
+if (window.innerWidth > 1365) {
   document.body.style.marginLeft = "250px";
   document.body.classList.add("sidebar-open");
   document.querySelector('#mySidenav').style.width = "250px";
