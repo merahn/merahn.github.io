@@ -630,6 +630,7 @@ details {
 /* Modal (hidden by default) */
 .modal {
   position: fixed;
+  display: flex;
   z-index: 9999;
   width: 100vw;
   height: 100vh;
@@ -650,8 +651,13 @@ details {
   object-fit: contain;
 }
 
-body:not(.sidebar-open) .modal {
-  padding-left: 250px; /* cancel out the leftover body margin */
+body.sidebar-open .modal {
+  padding-right: 250px;
+}
+
+body.sidebar-open .close {
+  top: 15px;
+  right: 300px;
 }
 
 /* Close button (X) */

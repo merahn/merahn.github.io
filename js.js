@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       img.onclick = function () {
         modal.style.display = "flex";
         modalImage.src = this.src;
-        document.getElementById("caption").innerText = this.alt || "";
+        document.getElementById("caption").innerText = "";
       };
     });
   }
