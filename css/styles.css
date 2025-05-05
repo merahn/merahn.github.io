@@ -410,13 +410,10 @@ h2 {
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 .resume {
   font-family: 'Spectral', sans-serif;
-  width: 1350px;
-  /* border: black 2px solid; */
+  width: 1250px;
   background-color: white;
-  margin: 0 auto;
+  margin: 20px auto;
   border-radius: 25px;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .resume p,
@@ -437,7 +434,7 @@ h1 {
 }
 
 .resume-body {
-  width: 50%;
+  width: 65%;
   margin: 0 auto;
   padding-bottom: 50px;
 }
